@@ -27,11 +27,11 @@ namespace Ejercicio_3_MiguelC
 
             usuario = datosMysql.Login(usertxt.Text, passtxt.Text);
 
-            //if (usuario == null)
-            //{
-            //    MessageBox.Show("Datos incorrectos");
-            //    return;
-            //}
+            if (usuario == null)
+            {
+                MessageBox.Show("Datos incorrectos");
+                return;
+            }
 
             Usersfrm frmusers = new Usersfrm();
             frmusers.Show();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos.Accesos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace Ejercicio_3_MiguelC
         public Usersfrm()
         {
             InitializeComponent();
+        }
+
+        DatosMySql usuarioDA = new DatosMySql();
+
+        private void Usersfrm_Load(object sender, EventArgs e)
+        {
+            ListarUsuarios();
+
+        }
+
+        private void ListarUsuarios()
+        {
+            dataGridView1.DataSource = usuarioDA.ListaUsuarios();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Datos.Accesos
 {
     public class DatosMySql
     {
-        readonly string cadena = "Server=localhost; Port=3306; Database=ejercicio3.1; Uid=root; Pwd=queremosla12; ";
+        readonly string cadena = "Server=127.0.0.1; Port=3306; Database=ejercicio3.1; Uid=root; Pwd=queremosla12; ";
 
         MySqlConnection conn;
         MySqlCommand cmd;
@@ -23,7 +23,7 @@ namespace Datos.Accesos
 
             try
             {
-                string sql = "SELECT * FROM usuarios WHERE User = @User, Pass = @Pass;";
+                string sql = "SELECT * FROM usuarios WHERE User = @User AND Pass = @Pass;";
 
                 conn = new MySqlConnection(cadena);
                 conn.Open();
@@ -60,7 +60,7 @@ namespace Datos.Accesos
 
             try
             {
-                string sql = "SELECT * FROM usuarios;";
+                string sql = "SELECT * FROM usuarios;*";
                 conn = new MySqlConnection(cadena);
                 conn.Open();
 
